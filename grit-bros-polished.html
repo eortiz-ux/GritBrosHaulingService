@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grit Bros Hauling - Chicago Junk Removal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===================================
+           RESET & VARIABLES
+           =================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --grit-green: #083b2e;
+            --dark-green: #062b20;
+            --rhino-gray: #4A4A4A;
+            --light-gray: #F4F4F4;
+            --border: #E5E7EB;
+            --white: #FFFFFF;
+            --black: #000000;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--rhino-gray);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            padding-bottom: 80px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--black);
+            line-height: 1.2;
+        }
+
+        /* ===================================
+           LANGUAGE TOGGLE
+           =================================== */
+        .lang-toggle {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            z-index: 1000;
+        }
+
+        .lang-btn {
+            background: var(--white);
+            color: var(--grit-green);
+            border: 2px solid var(--grit-green);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .lang-btn:active {
+            transform: scale(0.95);
+        }
+
+        .lang-en [data-lang="es"],
+        .lang-es [data-lang="en"] {
+            display: none;
+        }
+
+        /* ===================================
+           HERO
+           =================================== */
+        .hero {
+            background: linear-gradient(135deg, var(--grit-green) 0%, var(--dark-green) 100%);
+            color: var(--white);
+            padding: 30px 20px 50px;
+            text-align: center;
+        }
+
+        .hero-logo {
+            width: 140px;
+            height: auto;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 0.95rem;
+            opacity: 0.95;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .trust-line {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .charity-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            flex: 1;
+            min-width: 140px;
+            padding: 14px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            text-align: center;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--grit-green);
+        }
+
+        .btn-primary:active {
+            transform: scale(0.97);
+            background: var(--light-gray);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:active {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* ===================================
+           SERVICES
+           =================================== */
+        .services {
+            padding: 40px 20px;
+            background: var(--white);
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #6B7280;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        .service-grid {
+            display: grid;
+            gap: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .service-card:active {
+            transform: scale(0.98);
+            border-color: var(--grit-green);
+            background: #f0fdf4;
+        }
+
+        .service-icon {
+            width: 52px;
+            height: 52px;
+            background: var(--grit-green);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .service-icon svg {
+            width: 26px;
+            height: 26px;
+            stroke: white;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .service-content h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .service-content p {
+            font-size: 0.95rem;
+            color: #6B7280;
+            line-height: 1.4;
+        }
+
+        /* ===================================
+           DEMO DETAILS
+           =================================== */
+        .demo-details {
+            padding: 40px 20px;
+            background: var(--light-gray);
+        }
+
+        .demo-grid {
+            display: grid;
+            gap: 20px;
+            max-width: 600px;
+            margin: 30px auto 0;
+        }
+
+        .demo-box {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .demo-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .demo-box ul {
+            list-style: none;
+        }
+
+        .demo-box li {
+            padding: 10px 0;
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--border);
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .demo-box li:last-child {
+            border-bottom: none;
+        }
+
+        .demo-box li:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 16px;
+            width: 6px;
+            height: 6px;
+            background: var(--rhino-gray);
+            border-radius: 50%;
+        }
+
+        .demo-yes h3 {
+            color: var(--grit-green);
+        }
+
+        .demo-no h3 {
+            color: #DC2626;
+        }
+
+        /* ===================================
+           WHY US
+           =================================== */
+        .why-us {
+            padding: 40px 20px;
+            background: var(--white);
+        }
+
+        .feature-grid {
+            display: grid;
+            gap: 16px;
+            max-width: 600px;
+            margin: 30px auto 0;
+        }
+
+        .feature {
+            background: var(--light-gray);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            gap: 16px;
+            align-items: start;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--grit-green);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .feature-content h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .feature-content p {
+            font-size: 0.9rem;
+            color: #6B7280;
+        }
+
+        /* ===================================
+           AREAS WE SERVE
+           =================================== */
+        .areas-serve {
+            padding: 30px 20px;
+            background: var(--grit-green);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .areas-serve h2 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .areas-serve p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        /* ===================================
+           TESTIMONIALS
+           =================================== */
+        .testimonials {
+            padding: 40px 20px;
+            background: var(--light-gray);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            gap: 20px;
+            max-width: 800px;
+            margin: 30px auto 0;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--rhino-gray);
+            font-style: italic;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-author {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--grit-green);
+        }
+
+        /* ===================================
+           FAQ SECTION
+           =================================== */
+        .faq {
+            padding: 40px 20px;
+            background: var(--white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 30px auto 0;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px;
+            background: var(--white);
+            border: none;
+            text-align: left;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--black);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .faq-question:hover {
+            background: var(--light-gray);
+        }
+
+        .faq-icon {
+            font-size: 1.2rem;
+            color: var(--grit-green);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-content {
+            padding: 0 20px 20px 20px;
+            color: var(--rhino-gray);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        /* ===================================
+           TEXT REVIEWS
+           =================================== */
+        .text-reviews {
+            background: var(--white);
+            padding: 40px 20px;
+        }
+
+        .review-list {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            gap: 16px;
+        }
+
+        /* Mobile carousel */
+        @media (max-width: 767px) {
+            .review-list {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 12px;
+                padding: 0 20px;
+                margin: 0 -20px;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .review-list::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        .review-card {
+            background: var(--light-gray);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            position: relative;
+        }
+
+        @media (max-width: 767px) {
+            .review-card {
+                min-width: 85%;
+                scroll-snap-align: center;
+            }
+        }
+
+        .review-stars {
+            color: #FFA500;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+
+        .review-card p {
+            font-style: italic;
+            color: var(--rhino-gray);
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .review-card h4 {
+            margin-top: 10px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--grit-green);
+        }
+
+        .google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            color: #4285F4;
+            margin-top: 8px;
+        }
+
+        .google-badge svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* ===================================
+           PHOTO TESTIMONIALS
+           =================================== */
+        .photo-testimonials {
+            padding: 40px 20px;
+            background: var(--light-gray);
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            max-width: 700px;
+            margin: 30px auto 0;
+        }
+
+        .photo-grid figure {
+            margin: 0;
+        }
+
+        .photo-grid img {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .photo-grid figcaption {
+            font-size: 0.85rem;
+            margin-top: 6px;
+            text-align: center;
+            color: var(--rhino-gray);
+        }
+
+        /* ===================================
+           ABOUT US
+           =================================== */
+        .about-us {
+            padding: 40px 20px;
+            background: var(--white);
+        }
+
+        .about-us p {
+            max-width: 800px;
+            margin: 20px auto 0;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--rhino-gray);
+        }
+
+        /* ===================================
+           CONTACT FORM
+           =================================== */
+        .contact-form {
+            padding: 40px 20px;
+            background: var(--light-gray);
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 30px auto 0;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--black);
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--grit-green);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--grit-green);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .submit-btn:active {
+            background: var(--dark-green);
+            transform: scale(0.98);
+        }
+
+        /* ===================================
+           CHARITY
+           =================================== */
+        .charity {
+            padding: 40px 20px;
+            background: var(--grit-green);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .charity h2 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .charity p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        /* ===================================
+           FOOTER
+           =================================== */
+        .footer {
+            background: var(--rhino-gray);
+            color: var(--white);
+            padding: 30px 20px 20px;
+            text-align: center;
+        }
+
+        .footer h3 {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .footer p {
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .footer a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+        }
+
+        .social-icon:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* ===================================
+           MOBILE FLOATING CTA
+           =================================== */
+        .mobile-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-top: 1px solid var(--border);
+            padding: 12px;
+            display: flex;
+            gap: 10px;
+            z-index: 999;
+            box-shadow: 0 -4px 12px rgba(0,0,0,0.08);
+        }
+
+        .mobile-cta-btn {
+            flex: 1;
+            padding: 14px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .mobile-cta-call {
+            background: var(--grit-green);
+            color: var(--white);
+        }
+
+        .mobile-cta-call:active {
+            background: var(--dark-green);
+            transform: scale(0.97);
+        }
+
+        .mobile-cta-text {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .mobile-cta-text:active {
+            background: #374151;
+            transform: scale(0.97);
+        }
+
+        /* ===================================
+           TABLET & DESKTOP
+           =================================== */
+        @media (min-width: 768px) {
+            body {
+                padding-bottom: 0;
+            }
+
+            .hero-logo {
+                width: 180px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
+
+            .trust-line {
+                font-size: 0.95rem;
+                margin-bottom: 12px;
+            }
+
+            .charity-badge {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+                margin-bottom: 25px;
+            }
+
+            .service-grid,
+            .demo-grid,
+            .feature-grid {
+                max-width: 800px;
+            }
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .demo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .photo-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .mobile-cta {
+                display: none;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero {
+                padding: 60px 20px 60px;
+            }
+
+            .services,
+            .demo-details,
+            .why-us,
+            .contact-form,
+            .charity {
+                padding: 60px 20px;
+            }
+
+            .service-grid {
+                grid-template-columns: repeat(3, 1fr);
+                max-width: 1000px;
+            }
+
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 900px;
+            }
+        }
+    </style>
+</head>
+<body class="lang-en">
+    
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button id="langBtn" class="lang-btn">
+            <span data-lang="en">ES</span>
+            <span data-lang="es">EN</span>
+        </button>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <img src="YOUR-LOGO.png" alt="Grit Bros Hauling Logo" class="hero-logo">
+        
+        <h1>
+            <span data-lang="en">Pull Up, Load Up, Roll Out</span>
+            <span data-lang="es">Llegamos, Cargamos, Nos Vamos</span>
+        </h1>
+        <p>
+            <span data-lang="en">Chicago's fastest junk removal</span>
+            <span data-lang="es">Remoción de basura más rápida de Chicago</span>
+        </p>
+        <p class="trust-line">
+            <span data-lang="en">Fully Insured • Free Estimates</span>
+            <span data-lang="es">Asegurado • Estimados Gratis</span>
+        </p>
+        <p class="trust-line">
+            <span data-lang="en">Fast 24–48 Hour Booking</span>
+            <span data-lang="es">Reserva Rápida 24–48 Horas</span>
+        </p>
+        <div class="charity-badge">
+            <span data-lang="en">🤝 15% of profits support our community</span>
+            <span data-lang="es">🤝 15% de ganancias apoyan nuestra comunidad</span>
+        </div>
+        <div class="hero-buttons">
+            <a href="tel:708-595-5927" class="btn btn-primary">
+                <span data-lang="en">Call Now</span>
+                <span data-lang="es">Llamar</span>
+            </a>
+            <a href="sms:708-595-5927" class="btn btn-secondary" id="heroTextBtn">
+                <span data-lang="en">Text Quote</span>
+                <span data-lang="es">Mensaje</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <h2 class="section-title">
+            <span data-lang="en">Choose Your Service</span>
+            <span data-lang="es">Elige Tu Servicio</span>
+        </h2>
+        <p class="section-subtitle">
+            <span data-lang="en">Tap to text us instantly</span>
+            <span data-lang="es">Toca para enviarnos un mensaje</span>
+        </p>
+        
+        <div class="service-grid">
+            <div class="service-card" data-service-en="Junk Removal" data-service-es="Remoción de Basura">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M3 6h18M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/></svg>
+                </div>
+                <div class="service-content">
+                    <h3 data-lang="en">Junk Removal</h3>
+                    <h3 data-lang="es">Remoción de Basura</h3>
+                    <p data-lang="en">Clear out unwanted items fast</p>
+                    <p data-lang="es">Elimina artículos rápido</p>
+                </div>
+            </div>
+
+            <div class="service-card" data-service-en="Eviction Cleanouts" data-service-es="Desalojos">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+                </div>
+                <div class="service-content">
+                    <h3 data-lang="en">Eviction Cleanouts</h3>
+                    <h3 data-lang="es">Desalojos</h3>
+                    <p data-lang="en">Complete property cleanouts</p>
+                    <p data-lang="es">Limpieza completa de propiedades</p>
+                </div>
+            </div>
+
+            <div class="service-card" data-service-en="Appliance Removal" data-service-es="Remoción de Electrodomésticos">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="2" x2="9" y2="22"/><circle cx="14.5" cy="8.5" r="1.5"/></svg>
+                </div>
+                <div class="service-content">
+                    <h3 data-lang="en">Appliance Removal</h3>
+                    <h3 data-lang="es">Electrodomésticos</h3>
+                    <p data-lang="en">Fridges, washers & more</p>
+                    <p data-lang="es">Refrigeradores y más</p>
+                </div>
+            </div>
+
+            <div class="service-card" data-service-en="Minor Demolition" data-service-es="Demolición Menor">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+                <div class="service-content">
+                    <h3 data-lang="en">Minor Demolition</h3>
+                    <h3 data-lang="es">Demolición Menor</h3>
+                    <p data-lang="en">Safe, small-scale demo work</p>
+                    <p data-lang="es">Trabajo seguro de demolición</p>
+                </div>
+            </div>
+
+            <div class="service-card" data-service-en="Truck Transport" data-service-es="Transporte">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h5l3 3v5h-2m-4 0H2M7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm13 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
+                </div>
+                <div class="service-content">
+                    <h3 data-lang="en">Truck Transport</h3>
+                    <h3 data-lang="es">Transporte</h3>
+                    <p data-lang="en">Move items from A to B</p>
+                    <p data-lang="es">Mueve artículos de A a B</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Details -->
+    <section class="demo-details">
+        <h2 class="section-title">
+            <span data-lang="en">Minor Demolition Scope</span>
+            <span data-lang="es">Alcance de Demolición Menor</span>
+        </h2>
+        
+        <div class="demo-grid">
+            <div class="demo-box demo-yes">
+                <h3>
+                    <span data-lang="en">We Handle</span>
+                    <span data-lang="es">Sí Hacemos</span>
+                </h3>
+                <ul>
+                    <li data-lang="en">Cabinet removal</li>
+                    <li data-lang="es">Remoción de gabinetes</li>
+                    <li data-lang="en">Carpet & tile removal</li>
+                    <li data-lang="es">Alfombras y azulejos</li>
+                    <li data-lang="en">Non-load-bearing drywall</li>
+                    <li data-lang="es">Paneles no estructurales</li>
+                    <li data-lang="en">Small wooden structures</li>
+                    <li data-lang="es">Estructuras pequeñas</li>
+                    <li data-lang="en">Shelving & built-ins</li>
+                    <li data-lang="es">Estanterías empotradas</li>
+                </ul>
+            </div>
+            
+            <div class="demo-box demo-no">
+                <h3>
+                    <span data-lang="en">We Don't Handle</span>
+                    <span data-lang="es">No Hacemos</span>
+                </h3>
+                <ul>
+                    <li data-lang="en">Electrical work</li>
+                    <li data-lang="es">Trabajo eléctrico</li>
+                    <li data-lang="en">Roofing</li>
+                    <li data-lang="es">Techos</li>
+                    <li data-lang="en">Plumbing</li>
+                    <li data-lang="es">Plomería</li>
+                    <li data-lang="en">Hazardous waste</li>
+                    <li data-lang="es">Residuos peligrosos</li>
+                    <li data-lang="en">Load-bearing walls</li>
+                    <li data-lang="es">Paredes estructurales</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="why-us">
+        <h2 class="section-title">
+            <span data-lang="en">Why Choose Grit Bros</span>
+            <span data-lang="es">Por Qué Elegirnos</span>
+        </h2>
+        
+        <div class="feature-grid">
+            <div class="feature">
+                <div class="feature-icon">1</div>
+                <div class="feature-content">
+                    <h3 data-lang="en">Fast 24–48 Hour Booking</h3>
+                    <h3 data-lang="es">Reserva Rápida 24–48 Horas</h3>
+                    <p data-lang="en">Quick response and scheduling</p>
+                    <p data-lang="es">Respuesta y programación rápida</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">2</div>
+                <div class="feature-content">
+                    <h3 data-lang="en">Fully Insured Crew</h3>
+                    <h3 data-lang="es">Equipo Completamente Asegurado</h3>
+                    <p data-lang="en">Protected and professional service</p>
+                    <p data-lang="es">Servicio protegido y profesional</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">3</div>
+                <div class="feature-content">
+                    <h3 data-lang="en">Affordable Pricing</h3>
+                    <h3 data-lang="es">Precios Asequibles</h3>
+                    <p data-lang="en">Fair rates, no hidden fees</p>
+                    <p data-lang="es">Tarifas justas, sin cargos ocultos</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">4</div>
+                <div class="feature-content">
+                    <h3 data-lang="en">Local High School & College Team</h3>
+                    <h3 data-lang="es">Equipo Local de Secundaria y Universidad</h3>
+                    <p data-lang="en">Young, energetic, hardworking</p>
+                    <p data-lang="es">Jóvenes, enérgicos, trabajadores</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">5</div>
+                <div class="feature-content">
+                    <h3 data-lang="en">Clean, Respectful, Professional</h3>
+                    <h3 data-lang="es">Limpios, Respetuosos, Profesionales</h3>
+                    <p data-lang="en">We treat your property with care</p>
+                    <p data-lang="es">Tratamos tu propiedad con cuidado</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">6</div>
+                <div class="feature-content">
+                    <h3 data-lang="en">5-Star Rated on Google</h3>
+                    <h3 data-lang="es">Calificación de 5 Estrellas en Google</h3>
+                    <p data-lang="en">Trusted by the community</p>
+                    <p data-lang="es">Confiado por la comunidad</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Text Reviews -->
+    <section class="text-reviews">
+        <h2 class="section-title">
+            <span data-lang="en">What Our Customers Say</span>
+            <span data-lang="es">Lo Que Dicen Nuestros Clientes</span>
+        </h2>
+
+        <div class="review-list">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p data-lang="en">"I hired them off of a Facebook post and was very impressed with their promptness and attention to detail. Highly recommend!"</p>
+                <p data-lang="es">"Los contraté a través de una publicación de Facebook y quedé muy impresionado con su prontitud y atención al detalle. ¡Altamente recomendados!"</p>
+                <h4>— Kevin Rocio</h4>
+                <div class="google-badge">
+                    <svg viewBox="0 0 24 24" fill="#4285F4"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                    <span data-lang="en">Google Review</span>
+                    <span data-lang="es">Reseña de Google</span>
+                </div>
+            </div>
+            
+            <div class="review-card">
+                <p data-lang="en">"My family and I were very satisfied with the level of urgency they showed and their professionalism."</p>
+                <p data-lang="es">"Mi familia y yo quedamos muy satisfechos con el nivel de urgencia que mostraron y su profesionalismo."</p>
+                <h4>— Samantha B.</h4>
+            </div>
+            
+            <div class="review-card">
+                <p data-lang="en">"Professional, answered my messages quickly, punctual, and efficient. Great service!"</p>
+                <p data-lang="es">"Profesionales, respondieron mis mensajes rápidamente, puntuales y eficientes. ¡Excelente servicio!"</p>
+                <h4>— Carolina Montesino</h4>
+            </div>
+            
+            <div class="review-card">
+                <p data-lang="en">"Hardworking, respectful and professional!"</p>
+                <p data-lang="es">"¡Trabajadores, respetuosos y profesionales!"</p>
+                <h4>— Victor Cabrera</h4>
+            </div>
+            
+            <div class="review-card">
+                <p data-lang="en">"Hard-working students who made it happen. Would hire again!"</p>
+                <p data-lang="es">"Estudiantes trabajadores que lo lograron. ¡Los contrataría de nuevo!"</p>
+                <h4>— SKULL R</h4>
+            </div>
+            
+            <div class="review-card">
+                <p data-lang="en">"Quick availability, great communication, and fair pricing. Very satisfied!"</p>
+                <p data-lang="es">"Disponibilidad rápida, excelente comunicación y precios justos. ¡Muy satisfecho!"</p>
+                <h4>— Jas</h4>
+            </div>
+            
+            <div class="review-card">
+                <p data-lang="en">"Quick response, did the job ASAP for a fair price. Couldn't ask for better!"</p>
+                <p data-lang="es">"Respuesta rápida, hicieron el trabajo lo antes posible por un precio justo. ¡No podría pedir nada mejor!"</p>
+                <h4>— SP Flacko</h4>
+            </div>
+            
+            <div class="review-card">
+                <p data-lang="en">"Super hard-working, efficient, and committed to getting the job done right."</p>
+                <p data-lang="es">"Súper trabajadores, eficientes y comprometidos a hacer el trabajo correctamente."</p>
+                <h4>— Katherine Quizhpi</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Areas We Serve -->
+    <section class="areas-serve">
+        <h2>
+            <span data-lang="en">Areas We Serve</span>
+            <span data-lang="es">Áreas Que Servimos</span>
+        </h2>
+        <p>
+            <span data-lang="en">Serving the entire Chicagoland area and suburbs</span>
+            <span data-lang="es">Sirviendo todo Chicago y los suburbios</span>
+        </p>
+    </section>
+
+    <!-- Photo Testimonials -->
+    <section class="photo-testimonials">
+        <h2 class="section-title">
+            <span data-lang="en">Before & After</span>
+            <span data-lang="es">Antes y Después</span>
+        </h2>
+
+        <p class="section-subtitle">
+            <span data-lang="en">Real jobs completed by Grit Bros</span>
+            <span data-lang="es">Trabajos reales completados por Grit Bros</span>
+        </p>
+
+        <div class="photo-grid">
+            <figure>
+                <img src="placeholder1.jpg" alt="Before garage cleanout">
+                <figcaption data-lang="en">Garage Cleanout – Before</figcaption>
+                <figcaption data-lang="es">Limpieza de Garaje – Antes</figcaption>
+            </figure>
+            <figure>
+                <img src="placeholder2.jpg" alt="After garage cleanout">
+                <figcaption data-lang="en">Garage Cleanout – After</figcaption>
+                <figcaption data-lang="es">Limpieza de Garaje – Después</figcaption>
+            </figure>
+            <figure>
+                <img src="placeholder3.jpg" alt="Yard waste cleanup">
+                <figcaption data-lang="en">Yard Waste Cleanup</figcaption>
+                <figcaption data-lang="es">Limpieza de Desechos de Jardín</figcaption>
+            </figure>
+            <figure>
+                <img src="placeholder4.jpg" alt="Basement cleanout">
+                <figcaption data-lang="en">Basement Cleanout</figcaption>
+                <figcaption data-lang="es">Limpieza de Sótano</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <h2 class="section-title">
+            <span data-lang="en">Frequently Asked Questions</span>
+            <span data-lang="es">Preguntas Frecuentes</span>
+        </h2>
+        <p class="section-subtitle">
+            <span data-lang="en">Everything you need to know</span>
+            <span data-lang="es">Todo lo que necesitas saber</span>
+        </p>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-lang="en">What areas do you serve?</span>
+                    <span data-lang="es">¿Qué áreas cubren?</span>
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p data-lang="en">We serve the entire Chicagoland area including all surrounding suburbs. Contact us to confirm we service your specific location.</p>
+                        <p data-lang="es">Servimos toda el área de Chicagoland incluyendo todos los suburbios circundantes. Contáctenos para confirmar que servimos su ubicación específica.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-lang="en">How does pricing work?</span>
+                    <span data-lang="es">¿Cómo funcionan los precios?</span>
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p data-lang="en">We provide free estimates based on the volume of items and type of service needed. Contact us with photos and details for an accurate quote.</p>
+                        <p data-lang="es">Proporcionamos estimados gratis basados en el volumen de artículos y tipo de servicio necesario. Contáctenos con fotos y detalles para una cotización precisa.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-lang="en">Do you offer free estimates?</span>
+                    <span data-lang="es">¿Ofrecen estimados gratis?</span>
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p data-lang="en">Yes! All estimates are completely free with no obligation. Text or call us with details about your project.</p>
+                        <p data-lang="es">¡Sí! Todos los estimados son completamente gratis sin obligación. Envíenos un mensaje o llame con detalles sobre su proyecto.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-lang="en">Do you take heavy items?</span>
+                    <span data-lang="es">¿Aceptan artículos pesados?</span>
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p data-lang="en">Yes, we handle heavy appliances, furniture, and equipment. We have the tools and manpower for safe removal of heavy items.</p>
+                        <p data-lang="es">Sí, manejamos electrodomésticos pesados, muebles y equipo. Tenemos las herramientas y la fuerza de trabajo para la remoción segura de artículos pesados.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-lang="en">What does "minor demolition" include?</span>
+                    <span data-lang="es">¿Qué incluye "demolición menor"?</span>
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p data-lang="en">We handle cabinet removal, carpet and tile removal, non-load-bearing drywall, small wooden structures, and shelving. We do NOT handle electrical, roofing, plumbing, hazardous waste, or load-bearing walls.</p>
+                        <p data-lang="es">Manejamos remoción de gabinetes, alfombras y azulejos, paneles de yeso no estructurales, estructuras pequeñas de madera y estanterías. NO manejamos trabajo eléctrico, techos, plomería, residuos peligrosos o paredes estructurales.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-lang="en">What items won't you take?</span>
+                    <span data-lang="es">¿Qué artículos no aceptan?</span>
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p data-lang="en">We cannot take hazardous materials, chemicals, paint, tires, or items requiring special disposal permits. Contact us if you're unsure about specific items.</p>
+                        <p data-lang="es">No podemos aceptar materiales peligrosos, químicos, pintura, llantas o artículos que requieren permisos especiales de eliminación. Contáctenos si no está seguro sobre artículos específicos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-lang="en">Do you handle evictions?</span>
+                    <span data-lang="es">¿Manejan desalojos?</span>
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p data-lang="en">Yes, we specialize in complete eviction and move-out cleanouts for landlords and property managers.</p>
+                        <p data-lang="es">Sí, nos especializamos en limpiezas completas de desalojos y mudanzas para propietarios y administradores de propiedades.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-lang="en">How fast can you arrive?</span>
+                    <span data-lang="es">¿Qué tan rápido pueden llegar?</span>
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p data-lang="en">We typically schedule jobs within 24-48 hours of your request. Contact us early for the fastest service.</p>
+                        <p data-lang="es">Normalmente programamos trabajos dentro de 24-48 horas de su solicitud. Contáctenos temprano para el servicio más rápido.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-lang="en">Do you recycle?</span>
+                    <span data-lang="es">¿Reciclan?</span>
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p data-lang="en">We make every effort to donate usable items and recycle materials whenever possible as part of our commitment to the community.</p>
+                        <p data-lang="es">Hacemos todo lo posible para donar artículos utilizables y reciclar materiales cuando sea posible como parte de nuestro compromiso con la comunidad.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-lang="en">How do I prepare for a pickup?</span>
+                    <span data-lang="es">¿Cómo me preparo para una recogida?</span>
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p data-lang="en">Simply gather items in one accessible location if possible. We'll handle all the heavy lifting and loading. Make sure we have clear access to the items.</p>
+                        <p data-lang="es">Simplemente reúna los artículos en una ubicación accesible si es posible. Nos encargaremos de todo el levantamiento pesado y la carga. Asegúrese de que tengamos acceso claro a los artículos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form">
+        <h2 class="section-title">
+            <span data-lang="en">Get Your Free Quote</span>
+            <span data-lang="es">Obtén Tu Cotización Gratis</span>
+        </h2>
+        <p class="section-subtitle">
+            <span data-lang="en">Fill out the form and we'll get back to you ASAP</span>
+            <span data-lang="es">Llena el formulario y te responderemos pronto</span>
+        </p>
+
+        <div class="form-container">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label>
+                        <span data-lang="en">Name *</span>
+                        <span data-lang="es">Nombre *</span>
+                    </label>
+                    <input type="text" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <span data-lang="en">Email *</span>
+                        <span data-lang="es">Correo *</span>
+                    </label>
+                    <input type="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <span data-lang="en">Phone *</span>
+                        <span data-lang="es">Teléfono *</span>
+                    </label>
+                    <input type="tel" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <span data-lang="en">Address</span>
+                        <span data-lang="es">Dirección</span>
+                    </label>
+                    <input type="text" name="address" placeholder="123 Main St, Chicago, IL">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <span data-lang="en">Service Needed *</span>
+                        <span data-lang="es">Servicio Necesario *</span>
+                    </label>
+                    <select name="service" id="serviceSelect" required>
+                        <option value="">
+                            <span class="lang-en">Select a service...</span>
+                            <span class="lang-es">Selecciona un servicio...</span>
+                        </option>
+                        <option value="junk-removal" class="service-option">
+                            <span class="service-en">Junk Removal</span>
+                            <span class="service-es">Remoción de Basura</span>
+                        </option>
+                        <option value="furniture-removal" class="service-option">
+                            <span class="service-en">Furniture Removal</span>
+                            <span class="service-es">Remoción de Muebles</span>
+                        </option>
+                        <option value="garage-basement" class="service-option">
+                            <span class="service-en">Garage / Basement Cleanouts</span>
+                            <span class="service-es">Limpieza de Garaje / Sótano</span>
+                        </option>
+                        <option value="appliance" class="service-option">
+                            <span class="service-en">Appliance Removal</span>
+                            <span class="service-es">Remoción de Electrodomésticos</span>
+                        </option>
+                        <option value="demolition" class="service-option">
+                            <span class="service-en">Small Demolition</span>
+                            <span class="service-es">Demolición Pequeña</span>
+                        </option>
+                        <option value="yard-waste" class="service-option">
+                            <span class="service-en">Yard Waste</span>
+                            <span class="service-es">Desechos de Jardín</span>
+                        </option>
+                        <option value="debris" class="service-option">
+                            <span class="service-en">Construction Debris</span>
+                            <span class="service-es">Escombros de Construcción</span>
+                        </option>
+                        <option value="moving-help" class="service-option">
+                            <span class="service-en">Light Moving Help</span>
+                            <span class="service-es">Ayuda con Mudanzas Ligeras</span>
+                        </option>
+                        <option value="dumpster-alternative" class="service-option">
+                            <span class="service-en">Dumpster Alternative</span>
+                            <span class="service-es">Alternativa a Contenedor</span>
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <span data-lang="en">Details</span>
+                        <span data-lang="es">Detalles</span>
+                    </label>
+                    <textarea name="message" placeholder="Tell us more about your project..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span data-lang="en">Send Message</span>
+                    <span data-lang="es">Enviar Mensaje</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section class="about-us">
+        <h2 class="section-title">
+            <span data-lang="en">Who We Are</span>
+            <span data-lang="es">Quiénes Somos</span>
+        </h2>
+        <p>
+            <span data-lang="en">
+                We're a team of local high school and college students doing honest hard work across Chicagoland. Started by two 18-year-olds with a truck and a work ethic, Grit Bros Hauling has grown into a trusted name for junk removal, cleanouts, and light demolition. We're fully insured, fast, and committed to treating every customer's property with respect. Whether it's a garage full of old furniture or a full eviction cleanout, we show up ready to work—and we get it done right.
+            </span>
+            <span data-lang="es">
+                Somos un equipo de estudiantes locales de secundaria y universidad que hacen trabajo honesto en toda el área de Chicago. Comenzado por dos jóvenes de 18 años con un camión y ética de trabajo, Grit Bros Hauling se ha convertido en un nombre confiable para remoción de basura, limpiezas y demolición ligera. Estamos completamente asegurados, somos rápidos y estamos comprometidos a tratar la propiedad de cada cliente con respeto. Ya sea un garaje lleno de muebles viejos o una limpieza completa de desalojo, llegamos listos para trabajar—y lo hacemos bien.
+            </span>
+        </p>
+    </section>
+
+    <!-- Charity -->
+    <section class="charity">
+        <h2>
+            <span data-lang="en">15% of Profits Support Our Community</span>
+            <span data-lang="es">15% de Ganancias Apoyan Nuestra Comunidad</span>
+        </h2>
+        <p>
+            <span data-lang="en">Every job helps local causes. We believe in giving back.</span>
+            <span data-lang="es">Cada trabajo ayuda causas locales. Creemos en devolver.</span>
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <h3>Grit Bros Hauling</h3>
+        <p>
+            <span data-lang="en">Fast. Fair. Local.</span>
+            <span data-lang="es">Rápido. Justo. Local.</span>
+        </p>
+        <p><a href="tel:708-595-5927">708-595-5927</a></p>
+        <p><a href="mailto:info@gritbroshauling.com">info@gritbroshauling.com</a></p>
+        <p>
+            <span data-lang="en">Serving Chicago & Suburbs</span>
+            <span data-lang="es">Sirviendo Chicago y Suburbios</span>
+        </p>
+        
+        <div class="social-links">
+            <a href="#" class="social-icon" title="Facebook">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+            </a>
+            <a href="#" class="social-icon" title="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="footer-bottom">
+            <span data-lang="en">&copy; 2024 Grit Bros Hauling. All rights reserved.</span>
+            <span data-lang="es">&copy; 2024 Grit Bros Hauling. Todos los derechos reservados.</span>
+        </div>
+    </footer>
+
+    <!-- Mobile CTA -->
+    <div class="mobile-cta">
+        <a href="tel:708-595-5927" class="mobile-cta-btn mobile-cta-call">
+            <span data-lang="en">Call Now</span>
+            <span data-lang="es">Llamar</span>
+        </a>
+        <a href="sms:708-595-5927" class="mobile-cta-btn mobile-cta-text" id="mobileTextBtn">
+            <span data-lang="en">Text Quote</span>
+            <span data-lang="es">Mensaje</span>
+        </a>
+    </div>
+
+    <script>
+        // ===================================
+        // CONFIG
+        // ===================================
+        const PHONE = '708-595-5927';
+        const body = document.body;
+        const langBtn = document.getElementById('langBtn');
+
+        // ===================================
+        // LANGUAGE TOGGLE
+        // ===================================
+        langBtn.addEventListener('click', () => {
+            const isEnglish = body.classList.contains('lang-en');
+            body.classList.toggle('lang-en', !isEnglish);
+            body.classList.toggle('lang-es', isEnglish);
+            localStorage.setItem('lang', isEnglish ? 'es' : 'en');
+            updateServiceDropdown();
+        });
+
+        // Load saved language
+        if (localStorage.getItem('lang') === 'es') {
+            body.classList.remove('lang-en');
+            body.classList.add('lang-es');
+        }
+        
+        // Update service dropdown based on language
+        function updateServiceDropdown() {
+            const isSpanish = body.classList.contains('lang-es');
+            const serviceSelect = document.getElementById('serviceSelect');
+            
+            if (!serviceSelect) return;
+            
+            const services = [
+                { value: '', en: 'Select a service...', es: 'Selecciona un servicio...' },
+                { value: 'junk-removal', en: 'Junk Removal', es: 'Remoción de Basura' },
+                { value: 'furniture-removal', en: 'Furniture Removal', es: 'Remoción de Muebles' },
+                { value: 'garage-basement', en: 'Garage / Basement Cleanouts', es: 'Limpieza de Garaje / Sótano' },
+                { value: 'appliance', en: 'Appliance Removal', es: 'Remoción de Electrodomésticos' },
+                { value: 'demolition', en: 'Small Demolition', es: 'Demolición Pequeña' },
+                { value: 'yard-waste', en: 'Yard Waste', es: 'Desechos de Jardín' },
+                { value: 'debris', en: 'Construction Debris', es: 'Escombros de Construcción' },
+                { value: 'moving-help', en: 'Light Moving Help', es: 'Ayuda con Mudanzas Ligeras' },
+                { value: 'dumpster-alternative', en: 'Dumpster Alternative', es: 'Alternativa a Contenedor' }
+            ];
+            
+            const currentValue = serviceSelect.value;
+            serviceSelect.innerHTML = '';
+            
+            services.forEach(service => {
+                const option = document.createElement('option');
+                option.value = service.value;
+                option.textContent = isSpanish ? service.es : service.en;
+                if (service.value === currentValue) {
+                    option.selected = true;
+                }
+                serviceSelect.appendChild(option);
+            });
+        }
+        
+        // Initialize dropdown on page load
+        updateServiceDropdown();
+
+        // ===================================
+        // SMS GENERATION
+        // ===================================
+        function getSMSLink(serviceName = '') {
+            const isSpanish = body.classList.contains('lang-es');
+            const msg = isSpanish
+                ? `¡Hola! Estoy buscando su servicio.\nTipo de servicio: ${serviceName}\nUbicación: \nDetalles: \nPuedo enviar fotos si es necesario.`
+                : `Hi! I'm looking for your service.\nService Type: ${serviceName}\nLocation: \nDetails: \nI can send photos if needed.`;
+            
+            const sep = /iPad|iPhone|iPod/.test(navigator.userAgent) ? '&' : '?';
+            return `sms:${PHONE}${sep}body=${encodeURIComponent(msg)}`;
+        }
+
+        // ===================================
+        // SERVICE CARD CLICKS
+        // ===================================
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const isSpanish = body.classList.contains('lang-es');
+                const service = isSpanish 
+                    ? card.getAttribute('data-service-es')
+                    : card.getAttribute('data-service-en');
+                window.location.href = getSMSLink(service);
+            });
+        });
+
+        // ===================================
+        // UPDATE TEXT BUTTONS
+        // ===================================
+        function updateTextButtons() {
+            document.getElementById('heroTextBtn').href = getSMSLink();
+            document.getElementById('mobileTextBtn').href = getSMSLink();
+        }
+
+        langBtn.addEventListener('click', updateTextButtons);
+        updateTextButtons();
+
+        // ===================================
+        // FAQ ACCORDION
+        // ===================================
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all other FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Toggle current FAQ
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // ===================================
+        // CONTACT FORM HANDLING
+        // ===================================
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                service: formData.get('service'),
+                message: formData.get('message')
+            };
+
+            // Here you would send to your backend/email service
+            // For now, show success message
+            alert('Thank you! We will contact you soon.');
+            this.reset();
+
+            // TODO: Integrate with backend (FormSpree, EmailJS, or custom API)
+            // Example with EmailJS:
+            // emailjs.send('service_id', 'template_id', data)
+            //   .then(() => alert('Message sent!'));
+        });
+    </script>
+</body>
+</html>
