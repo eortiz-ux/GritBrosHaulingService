@@ -22,6 +22,7 @@
             --grit-green: #083b2e;
             --dark-green: #062b20;
             --rhino-gray: #4A4A4A;
+            --dark-bg: #111111;
             --light-gray: #F4F4F4;
             --border: #E5E7EB;
             --white: #FFFFFF;
@@ -86,8 +87,8 @@
         }
 
         .hero-logo {
-            width: 140px;
-            height: auto;
+            width: 120px;
+            height: 120px;
             margin: 0 auto 20px;
             display: block;
         }
@@ -104,24 +105,21 @@
         .hero p {
             font-size: 0.95rem;
             opacity: 0.95;
-            margin-bottom: 12px;
+            margin-bottom: 20px;
             line-height: 1.4;
         }
 
-        .trust-line {
-            font-size: 0.85rem;
-            opacity: 0.9;
-            margin-bottom: 10px;
+        .trust-badges {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 25px;
+            align-items: center;
         }
 
-        .charity-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 20px;
-            backdrop-filter: blur(10px);
+        .trust-item {
+            font-size: 0.9rem;
+            opacity: 0.95;
         }
 
         .hero-buttons {
@@ -912,34 +910,36 @@
 
     <!-- Hero -->
     <section class="hero">
-        <img src="YOUR-LOGO.png" alt="Grit Bros Hauling Logo" class="hero-logo">
+        <img src="grit-bros-logo.png" alt="Grit Bros Hauling" class="hero-logo">
         
         <h1>
-            <span data-lang="en">Pull Up, Load Up, Roll Out</span>
-            <span data-lang="es">Llegamos, Cargamos, Nos Vamos</span>
+            <span data-lang="en">Chicago's Fastest Junk Removal</span>
+            <span data-lang="es">Remoción de Basura Más Rápida de Chicago</span>
         </h1>
         <p>
-            <span data-lang="en">Chicago's fastest junk removal</span>
-            <span data-lang="es">Remoción de basura más rápida de Chicago</span>
+            <span data-lang="en">Professional hauling services you can trust</span>
+            <span data-lang="es">Servicios profesionales de acarreo en los que puedes confiar</span>
         </p>
-        <p class="trust-line">
-            <span data-lang="en">Fully Insured • Free Estimates</span>
-            <span data-lang="es">Asegurado • Estimados Gratis</span>
-        </p>
-        <p class="trust-line">
-            <span data-lang="en">Fast 24–48 Hour Booking</span>
-            <span data-lang="es">Reserva Rápida 24–48 Horas</span>
-        </p>
-        <div class="charity-badge">
-            <span data-lang="en">🤝 15% of profits support our community</span>
-            <span data-lang="es">🤝 15% de ganancias apoyan nuestra comunidad</span>
+        <div class="trust-badges">
+            <div class="trust-item">
+                <span data-lang="en">✓ Fully Insured</span>
+                <span data-lang="es">✓ Completamente Asegurado</span>
+            </div>
+            <div class="trust-item">
+                <span data-lang="en">✓ Free Estimates</span>
+                <span data-lang="es">✓ Estimados Gratis</span>
+            </div>
+            <div class="trust-item">
+                <span data-lang="en">✓ 24–48 Hour Booking</span>
+                <span data-lang="es">✓ Reserva en 24–48 Horas</span>
+            </div>
         </div>
         <div class="hero-buttons">
-            <a href="tel:708-595-5927" class="btn btn-primary">
+            <a href="tel:7085955927" class="btn btn-primary">
                 <span data-lang="en">Call Now</span>
-                <span data-lang="es">Llamar</span>
+                <span data-lang="es">Llamar Ahora</span>
             </a>
-            <a href="sms:708-595-5927" class="btn btn-secondary" id="heroTextBtn">
+            <a href="sms:7085955927?&body=Hi%2C%20I%27m%20looking%20for%20more%20information%20about%20your%20services." class="btn btn-secondary" id="heroTextBtn">
                 <span data-lang="en">Text Quote</span>
                 <span data-lang="es">Mensaje</span>
             </a>
@@ -1572,8 +1572,8 @@
         </div>
 
         <div class="footer-bottom">
-            <span data-lang="en">&copy; 2024 Grit Bros Hauling. All rights reserved.</span>
-            <span data-lang="es">&copy; 2024 Grit Bros Hauling. Todos los derechos reservados.</span>
+            <span data-lang="en">&copy; 2025 Grit Bros Hauling. All rights reserved.</span>
+            <span data-lang="es">&copy; 2025 Grit Bros Hauling. Todos los derechos reservados.</span>
         </div>
     </footer>
 
