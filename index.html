@@ -89,14 +89,15 @@
     }
 
     .hero-logo {
-        width: 120px;
-        height: 120px;
+        width: 144px;
+        height: 144px;
         margin: 0 auto 20px;
         display: block;
         border: none;
         background: none;
         box-shadow: none;
         padding: 0;
+        object-fit: contain;
     }
 
     .hero h1 {
@@ -896,9 +897,9 @@
         }
 
         .hero-logo {
-            max-width: 240px;
-            width: 240px;
-            height: auto;
+            width: 288px;
+            height: 288px;
+            object-fit: contain;
         }
 
         .hero h1 {
@@ -940,15 +941,15 @@
         }
 
         .photo-grid {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 32px;
-            max-width: 1100px;
+            max-width: 900px;
             padding: 0 40px;
         }
 
         .photo-grid img {
-            max-width: 340px;
-            margin: 0 auto;
+            max-width: 100%;
+            width: 100%;
         }
 
         .mobile-cta {
@@ -1324,32 +1325,32 @@
 
     <div class="photo-grid">
         <figure>
-            <img src="garage-before.jpg" alt="Before garage cleanout">
+            <img src="img/garage-before.jpg" alt="Before garage cleanout">
             <figcaption data-lang="en">Garage Cleanout – Before</figcaption>
             <figcaption data-lang="es">Limpieza de Garaje – Antes</figcaption>
         </figure>
         <figure>
-            <img src="garage-after.jpg" alt="After garage cleanout">
+            <img src="img/garage-after.jpg" alt="After garage cleanout">
             <figcaption data-lang="en">Garage Cleanout – After</figcaption>
             <figcaption data-lang="es">Limpieza de Garaje – Después</figcaption>
         </figure>
         <figure>
-            <img src="warehouse-before.jpg" alt="Before warehouse cleanout">
+            <img src="img/warehouse-before.jpg" alt="Before warehouse cleanout">
             <figcaption data-lang="en">Warehouse Cleanout – Before</figcaption>
             <figcaption data-lang="es">Limpieza de Almacén – Antes</figcaption>
         </figure>
         <figure>
-            <img src="warehouse-after.jpg" alt="After warehouse cleanout">
+            <img src="img/warehouse-after.jpg" alt="After warehouse cleanout">
             <figcaption data-lang="en">Warehouse Cleanout – After</figcaption>
             <figcaption data-lang="es">Limpieza de Almacén – Después</figcaption>
         </figure>
         <figure>
-            <img src="yard-before.jpg" alt="Before yard cleanup">
+            <img src="img/yard-before.jpg" alt="Before yard cleanup">
             <figcaption data-lang="en">Yard Cleanup – Before</figcaption>
             <figcaption data-lang="es">Limpieza de Jardín – Antes</figcaption>
         </figure>
         <figure>
-            <img src="yard-after.jpg" alt="After yard cleanup">
+            <img src="img/yard-after.jpg" alt="After yard cleanup">
             <figcaption data-lang="en">Yard Cleanup – After</figcaption>
             <figcaption data-lang="es">Limpieza de Jardín – Después</figcaption>
         </figure>
@@ -1366,12 +1367,12 @@
                 <span data-lang="es">Facebook</span>
             </a>
             <span class="separator">•</span>
-            <a href="https://instagram.com/gritbroshauling" target="_blank" rel="noopener">
+            <a href="https://www.instagram.com/gritbroshauling/" target="_blank" rel="noopener">
                 <span data-lang="en">Instagram</span>
                 <span data-lang="es">Instagram</span>
             </a>
             <span class="separator">•</span>
-            <a href="https://share.google.com/iOc7PPFhTmPoWFe7g" target="_blank" rel="noopener">
+            <a href="https://www.google.com/search?q=Grit+Bros+Hauling" target="_blank" rel="noopener">
                 <span data-lang="en">Google</span>
                 <span data-lang="es">Google</span>
             </a>
@@ -1648,22 +1649,6 @@
     </div>
 </section>
 
-<!-- About Us -->
-<section class="about-us">
-    <h2 class="section-title">
-        <span data-lang="en">Who We Are</span>
-        <span data-lang="es">Quiénes Somos</span>
-    </h2>
-    <p>
-        <span data-lang="en">
-            We're a team of local high school and college students doing honest hard work across Chicagoland. Started by two 18-year-olds with a truck and a work ethic, Grit Bros Hauling has grown into a trusted name for junk removal, cleanouts, and light demolition. We're fully insured, fast, and committed to treating every customer's property with respect. Whether it's a garage full of old furniture or a full eviction cleanout, we show up ready to work—and we get it done right.
-        </span>
-        <span data-lang="es">
-            Somos un equipo de estudiantes locales de secundaria y universidad que hacen trabajo honesto en toda el área de Chicago. Comenzado por dos jóvenes de 18 años con un camión y ética de trabajo, Grit Bros Hauling se ha convertido en un nombre confiable para remoción de basura, limpiezas y demolición ligera. Estamos completamente asegurados, somos rápidos y estamos comprometidos a tratar la propiedad de cada cliente con respeto. Ya sea un garaje lleno de muebles viejos o una limpieza completa de desalojo, llegamos listos para trabajar—y lo hacemos bien.
-        </span>
-    </p>
-</section>
-
 <!-- Charity -->
 <section class="charity">
     <h2>
@@ -1684,26 +1669,26 @@
         <span data-lang="es">Rápido. Justo. Local.</span>
     </p>
     <p><a href="tel:708-595-5927">708-595-5927</a></p>
-    <p><a href="mailto:info@gritbroshauling.com">info@gritbroshauling.com</a></p>
+    <p><a href="mailto:grithaulingservices@gmail.com">grithaulingservices@gmail.com</a></p>
     <p>
         <span data-lang="en">Serving Chicago & Suburbs</span>
         <span data-lang="es">Sirviendo Chicago y Suburbios</span>
     </p>
     
     <div class="social-links">
-        <a href="#" class="social-icon" title="Facebook">
+        <a href="https://www.facebook.com/share/1YZGVYuhr3/?mibextid=wwXIfr" target="_blank" rel="noopener" class="social-icon" title="Facebook">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
             </svg>
         </a>
-        <a href="#" class="social-icon" title="Instagram">
+        <a href="https://www.instagram.com/gritbroshauling/" target="_blank" rel="noopener" class="social-icon" title="Instagram">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
             </svg>
         </a>
-        <a href="#" class="social-icon" title="Google Reviews">
+        <a href="https://www.google.com/search?q=Grit+Bros+Hauling" target="_blank" rel="noopener" class="social-icon" title="Google Reviews">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                 <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
