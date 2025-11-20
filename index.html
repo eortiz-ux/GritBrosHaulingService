@@ -885,11 +885,14 @@
         transform: scale(0.97);
     }
 
-/* Mobile default size */
+/* Logo styling - Fixed version */
 .hero-logo {
     width: 120px;
     height: 120px;
+    margin: 0 auto 20px;
+    display: block;
     object-fit: contain;
+    background: transparent; /* Ensures transparency is preserved */
 }
 
 /* Tablet & Desktop size */
@@ -898,17 +901,20 @@
         width: 200px;
         height: 200px;
     }
+    
+    /* Move the other tablet styles here too */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+    
+    /* ... rest of tablet styles */
 }
 
-
-        .hero h1 {
-            font-size: 2.5rem;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
 
         .trust-line {
             font-size: 0.95rem;
@@ -1011,7 +1017,7 @@
 
 <!-- Hero -->
 <section class="hero">
-    <img src="assets/img/logo.png" alt="Grit Bros Hauling Logo">
+  <img src="assets/img/logo.png" alt="Grit Bros Hauling Logo" class="hero-logo">
     <h1>
         <span data-lang="en">Chicago's Fastest Junk Removal</span>
         <span data-lang="es">Remoción de Basura Más Rápida de Chicago</span>
