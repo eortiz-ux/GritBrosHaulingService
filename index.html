@@ -593,12 +593,37 @@ h1, h2, h3 {
 }
 
 .photo-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
     max-width: 100%;
     margin: 30px auto 0;
-    padding: 0 10px;
+    padding: 0 20px 20px 20px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.photo-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.photo-grid::-webkit-scrollbar-track {
+    background: var(--light-gray);
+    border-radius: 4px;
+}
+
+.photo-grid::-webkit-scrollbar-thumb {
+    background: var(--grit-green);
+    border-radius: 4px;
+}
+
+.photo-pair {
+    min-width: 85%;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .photo-grid figure {
@@ -620,6 +645,14 @@ h1, h2, h3 {
     color: var(--rhino-gray);
     font-weight: 500;
 }
+
+/* Hide scrollbar on mobile for cleaner look */
+@media (max-width: 767px) {
+    .photo-grid::-webkit-scrollbar {
+        display: none;
+    }
+}
+
 
 .photo-social-links {
     text-align: center;
@@ -1331,42 +1364,49 @@ h1, h2, h3 {
 </p>
 
 <div class="photo-grid">
-    <figure>
-        <img src="assets/img/garage-before.jpg" alt="Before garage cleanout">
-        <figcaption data-lang="en">Garage Cleanout – Before</figcaption>
-        <figcaption data-lang="es">Limpieza de Garaje – Antes</figcaption>
-    </figure>
+    <!-- Pair 1: Garage -->
+    <div class="photo-pair">
+        <figure>
+            <img src="assets/img/garage-before.jpg" alt="Before garage cleanout">
+            <figcaption data-lang="en">Garage Cleanout – Before</figcaption>
+            <figcaption data-lang="es">Limpieza de Garaje – Antes</figcaption>
+        </figure>
+        <figure>
+            <img src="assets/img/garage-after.jpg" alt="After garage cleanout">
+            <figcaption data-lang="en">Garage Cleanout – After</figcaption>
+            <figcaption data-lang="es">Limpieza de Garaje – Después</figcaption>
+        </figure>
+    </div>
 
-    <figure>
-        <img src="assets/img/garage-after.jpg" alt="After garage cleanout">
-        <figcaption data-lang="en">Garage Cleanout – After</figcaption>
-        <figcaption data-lang="es">Limpieza de Garaje – Después</figcaption>
-    </figure>
+    <!-- Pair 2: Warehouse -->
+    <div class="photo-pair">
+        <figure>
+            <img src="assets/img/warehouse-before.jpg" alt="Before warehouse cleanout">
+            <figcaption data-lang="en">Warehouse Cleanout – Before</figcaption>
+            <figcaption data-lang="es">Limpieza de Almacén – Antes</figcaption>
+        </figure>
+        <figure>
+            <img src="assets/img/warehouse-after.jpg" alt="After warehouse cleanout">
+            <figcaption data-lang="en">Warehouse Cleanout – After</figcaption>
+            <figcaption data-lang="es">Limpieza de Almacén – Después</figcaption>
+        </figure>
+    </div>
 
-    <figure>
-        <img src="assets/img/warehouse-before.jpg" alt="Before warehouse cleanout">
-        <figcaption data-lang="en">Warehouse Cleanout – Before</figcaption>
-        <figcaption data-lang="es">Limpieza de Almacén – Antes</figcaption>
-    </figure>
-
-    <figure>
-        <img src="assets/img/warehouse-after.jpg" alt="After warehouse cleanout">
-        <figcaption data-lang="en">Warehouse Cleanout – After</figcaption>
-        <figcaption data-lang="es">Limpieza de Almacén – Después</figcaption>
-    </figure>
-
-    <figure>
-        <img src="assets/img/yard-before.jpg" alt="Before yard cleanup">
-        <figcaption data-lang="en">Yard Cleanup – Before</figcaption>
-        <figcaption data-lang="es">Limpieza de Jardín – Antes</figcaption>
-    </figure>
-
-    <figure>
-        <img src="assets/img/yard-after.jpg" alt="After yard cleanup">
-        <figcaption data-lang="en">Yard Cleanup – After</figcaption>
-        <figcaption data-lang="es">Limpieza de Jardín – Después</figcaption>
-    </figure>
+    <!-- Pair 3: Yard -->
+    <div class="photo-pair">
+        <figure>
+            <img src="assets/img/yard-before.jpg" alt="Before yard cleanup">
+            <figcaption data-lang="en">Yard Cleanup – Before</figcaption>
+            <figcaption data-lang="es">Limpieza de Jardín – Antes</figcaption>
+        </figure>
+        <figure>
+            <img src="assets/img/yard-after.jpg" alt="After yard cleanup">
+            <figcaption data-lang="en">Yard Cleanup – After</figcaption>
+            <figcaption data-lang="es">Limpieza de Jardín – Después</figcaption>
+        </figure>
+    </div>
 </div>
+
 
 <div class="photo-social-links">
     <p class="social-cta">
